@@ -1,0 +1,201 @@
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  padding: 8rem 0 6rem;
+  text-align: center;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgba(11, 15, 25, 0.4), rgba(11, 15, 25, 1)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--color-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.hero__search {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Popular search chips */
+.hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero__chip {
+  padding: 0.5rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.hero__chip:hover {
+  background: var(--bg-card-hover);
+  color: var(--color-text);
+  border-color: var(--color-text-secondary);
+}
+
+/* ─── Section Heading ────────────────────────────────────────────────────── */
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ─── APOD Section ───────────────────────────────────────────────────────── */
+
+.apod-section {
+  padding: 4rem 0 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* APOD skeleton placeholder */
+.apod-skeleton {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.apod-skeleton__img {
+  width: 100%;
+  min-height: 400px;
+  background: var(--color-border);
+  animation: pulse 1.5s infinite;
+}
+
+.apod-skeleton__info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.apod-skeleton__line {
+  height: 12px;
+  background: var(--color-border);
+  border-radius: 6px;
+  animation: pulse 1.5s infinite;
+  width: 100%;
+}
+
+.apod-skeleton__line--title { width: 40%; height: 24px; }
+
+/* APOD card */
+.apod-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.apod-card__img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 500px;
+  border: 1px solid var(--color-border);
+}
+
+.apod-card__video-note {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  padding: 4rem 2rem;
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+.apod-card__info {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.apod-card__title {
+  font-size: 1.75rem;
+  color: var(--color-text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.apod-card__desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.apod-card__link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: opacity var(--transition);
+}
+
+.apod-card__link:hover {
+  opacity: 0.8;
+}
+
+/* Error message */
+.error-msg {
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+  .hero { padding: 4rem 0 3rem; }
+  .hero__title { font-size: 2.5rem; }
+  .apod-card__img { max-height: 300px; }
+}

@@ -1,0 +1,100 @@
+.image-card {
+  background: var(--bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.image-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-color: var(--color-border);
+}
+
+/* ─── Image area ─────────────────────────────────────────────────────────── */
+
+.image-card__image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.image-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+/* Fallback when image fails to load */
+.image-card__fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: #0d1526;
+}
+
+/* ─── Favorite button ────────────────────────────────────────────────────── */
+
+.image-card__fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: transform var(--transition), background var(--transition);
+  opacity: 0;                      /* hidden by default, shows on hover */
+}
+
+.image-card:hover .image-card__fav-btn {
+  opacity: 1;
+}
+
+.image-card__fav-btn--saved {
+  opacity: 1;                      /* always visible if saved */
+}
+
+.image-card__fav-btn:hover {
+  transform: scale(1.15);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* ─── Info area ──────────────────────────────────────────────────────────── */
+
+.image-card__info {
+  padding: 0.85rem 1rem;
+}
+
+.image-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.image-card__date {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.image-card__center {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
