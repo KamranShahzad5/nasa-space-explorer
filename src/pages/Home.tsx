@@ -4,7 +4,7 @@ import SearchBar from '../components/SearchBar';
 import { fetchAPOD } from '../services/nasaApi';
 import { APODResponse } from '../types';
 import { POPULAR_SEARCHES } from '../utils/constants';
-import { formatDate } from '../utils/helpers';
+
 import './Home.css';
 
 // Home Page
